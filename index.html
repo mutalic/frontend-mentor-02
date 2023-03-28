@@ -3,10 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bbb98450b2.js" crossorigin="anonymous"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./main.css">
   <title>Frontend Mentor | Results summary component</title>
 </head>
 <body>
+  <main>
+    <section class="result">
+      <div class="content-container">
+        <h2>Your Result</h2>
+        <div class="score-circle">
+          <h1 class="score--numerator">76</h1>
+          <p class="score--denominator">of 100</p>
+        </div>
+        <div class="assessment">
+          <h3 class="assessment--comment">Great</h3>
+          <p class="assessment--comparison">You scored higher than 65% of the people who have taken these tests.</p>
+        </div>
+      </div>
+    </section>
+    <section class="summary">
+      <div class="content-container">
+        <h2>Summary</h2>
+
+        <div id="aspects" class="summary--aspects"></div>
+
+        <div class="continue">
+          <p>Continue</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    async function getData(url) {
+      let data = await fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          data.forEach(function (aspect, i) {
+            let aspectHTML = `
+              <div class="aspect">
+                <div class="aspect--name">
+                  <p><img src=${aspect.icon} alt="">${aspect.category}</p>
+                </div>
+                <div class="aspect--score">
+                  <p>${aspect.score}/100</p>
+                </div>
+              </div>
+              `;
+
+            document.getElementById('aspects').innerHTML += aspectHTML;
+          })
+        })
+    }
+    getData('./data.json');
+
+
+    // let aspectTemplate = `
+    // <div class="aspect">
+    //   <div class="aspect--name">
+    //     <p><img src=${icon} alt="">${category}</p>
+    //   </div>
+    //   <div class="aspect--score">
+    //     <p>${score}/100</p>
+    //   </div>
+    // </div>
+    // `;
+
+  </script>
 </body>
 </html>
