@@ -46,6 +46,11 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
+- HTML architecture & CSS class names
+- CSS custom variables
+  - colors
+  - font-family, font-size
+
 ### Built with
 
 - Semantic HTML5 markup
