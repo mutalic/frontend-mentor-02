@@ -17,7 +17,7 @@
 
     <section class="result">
       <div class="content-container">
-        <h2 class="clr-light-lavender section-title fs-lg">Your Result</h2>
+        <h2 class="clr-light-lavender result--title fs-lg">Your Result</h2>
         <div class="score-circle">
           <h1 class="score--numerator fs-xxl clr-white">76</h1>
           <p class="score--denominator clr-light-lavender fs-m">of 100</p>
@@ -33,7 +33,7 @@
 
     <section class="summary">
       <div class="content-container">
-        <h2 class="section-title">Summary</h2>
+        <h2 class="summary--title fs-lg">Summary</h2>
 
         <div id="aspects" class="summary--aspects"></div>
 
@@ -49,14 +49,22 @@
       let data = await fetch(url)
         .then((response) => response.json())
         .then((data) => {
+
+          let bgColors = [
+            { color: `--primary--light-red`, bg: `--transparent--light-red` },
+            { color: `--primary--orangey-yellow`, bg: `--transparent--orangey-yellow` },
+            { color: `--primary--green-teal`, bg: `--transparent--green-teal` },
+            { color: `--primary--cobalt-blue`, bg: `--transparent--cobalt-blue` }
+          ]
+
           data.forEach(function (aspect, i) {
             let aspectHTML = `
-              <div class="aspect">
+              <div class="summary--aspect" style="background-color: var(${bgColors[i].bg})">
                 <div class="aspect--name">
-                  <p><img src=${aspect.icon} alt="">${aspect.category}</p>
+                  <img src=${aspect.icon} class="aspect--icon"><p class="fs-sm" style="color:var(${bgColors[i].color})">${aspect.category}</p>
                 </div>
                 <div class="aspect--score">
-                  <p>${aspect.score}/100</p>
+                  <p class="fs-sm" style="color: var(--bg--dark-gray-blue)">${aspect.score} <span style="color: gray">/ 100</span></p>
                 </div>
               </div>
               `;
