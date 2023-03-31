@@ -17,14 +17,14 @@
 
     <section class="result">
       <div>
-        <h2 class="clr-light-lavender result--title fs-lg">Your Result</h2>
+        <h2 class="result--title fs-lg">Your Result</h2>
         <div class="score-circle">
-          <h1 class="score--numerator fs-xxl clr-white">76</h1>
-          <p class="score--denominator clr-light-lavender fs-m">of 100</p>
+          <h1 class="score--numerator fs-xxl">76</h1>
+          <p class="score--denominator fs-m">of 100</p>
         </div>
         <div class="assessment">
-          <h3 class="assessment--comment fs-xl clr-white">Great</h3>
-          <p class="assessment--comparison clr-light-lavender fs-sm">You scored higher than 65% of the people who have
+          <h3 class="assessment--comment fs-xl">Great</h3>
+          <p class="assessment--comparison fs-sm">You scored higher than 65% of the people who have
             taken
             these tests.</p>
         </div>
@@ -37,9 +37,9 @@
 
         <div id="aspects" class="summary--aspects"></div>
 
-        <div class="continue">
+        <button class="continue">
           <p>Continue</p>
-        </div>
+        </button>
       </div>
     </section>
   </main>
@@ -50,18 +50,18 @@
         .then((response) => response.json())
         .then((data) => {
 
-          let bgColors = [
-            { color: `--primary--light-red`, bg: `--transparent--light-red` },
-            { color: `--primary--orangey-yellow`, bg: `--transparent--orangey-yellow` },
-            { color: `--primary--green-teal`, bg: `--transparent--green-teal` },
-            { color: `--primary--cobalt-blue`, bg: `--transparent--cobalt-blue` }
+          let colors = [
+            { color: `--primary--light-red`, bg: `--transparent--light-red`, id: "red" },
+            { color: `--primary--orangey-yellow`, bg: `--transparent--orangey-yellow`, id: "yellow" },
+            { color: `--primary--green-teal`, bg: `--transparent--green-teal`, id: "teal" },
+            { color: `--primary--cobalt-blue`, bg: `--transparent--cobalt-blue`, id: "blue" }
           ]
 
           data.forEach(function (aspect, i) {
             let aspectHTML = `
-              <div class="summary--aspect" style="background-color: var(${bgColors[i].bg})">
+              <div id=${colors[i].id} class="summary--aspect" style="background-color: var(${colors[i].bg})">
                 <div class="aspect--name">
-                  <img src=${aspect.icon} class="aspect--icon"><p class="fs-sm" style="color:var(${bgColors[i].color})">${aspect.category}</p>
+                  <img src=${aspect.icon} class="aspect--icon"><p class="fs-sm" style="color:var(${colors[i].color})">${aspect.category}</p>
                 </div>
                 <div class="aspect--score">
                   <p class="fs-sm" style="color: var(--bg--dark-gray-blue)">${aspect.score} <span style="color: gray">/ 100</span></p>
@@ -74,7 +74,6 @@
         })
     }
     getData('./data.json');
-
   </script>
 </body>
 </html>

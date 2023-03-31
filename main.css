@@ -38,42 +38,41 @@ h1, h2, h3, p {
     font-size: 1rem;
 }
 
-/* Font */
-    /* Size */
-    .fs-xxl {
-        font-size: 2.5rem;
-    }
-    .fs-xl {
-        font-size: 1.3rem;
-    }
-    .fs-lg {
-        font-size: 1.1rem;
-    }
-    .fs-m {
-        font-size: 1rem;
-    }
-    .fs-sm {
-        font-size: 0.8rem;
-    }
+/* Font Size */
+.fs-xxl {
+    font-size: 2.5rem;
+}
+.fs-xl {
+    font-size: 1.3rem;
+}
+.fs-lg {
+    font-size: 1.1rem;
+}
+.fs-m {
+    font-size: 1rem;
+}
+.fs-sm {
+    font-size: 0.8rem;
+}
 
-    /* color*/
-    .clr-white {
-        color: var(--bg--white);
-    }
-    .clr-light-lavender {
-        color: var(--bg--light-lavender);
-    }
 
+/* Colors */
+.score--denominator, .assessment--comparison, .result--title {
+    color: var(--bg--light-lavender);
+}
+.score--numerator, .assessment--comment {
+    color: var(--bg--white);
+}
+
+/************ Mobile *************/
 
 main {
     background-color: var(--bg--white);
-    min-height: 100vh;
+    max-height: 800px;
     max-width: 380px;
     margin: 0 auto;
     box-shadow: 0px 20px 50px #eee;
 }
-
-/************ Mobile *************/
 
 /* Result */
 
@@ -146,9 +145,11 @@ main {
 }
 
 .continue {
+    width: 100%;
     background-color: var(--bg--dark-gray-blue);
     color: var(--bg--white);
     padding: 0.8rem 1rem;
+    border: none;
     border-radius: 30px;
     text-align: center;
     margin-bottom: 1.5rem;
@@ -159,9 +160,9 @@ main {
     cursor: pointer;
 }
 
-/************ Desktop Changes *************/
+/************ Desktop *************/
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 960px) {
     .fs-xxl {
         font-size: 3.5rem;
     }
@@ -176,7 +177,7 @@ main {
         display: flex;
         margin: auto;
         min-height: 0;
-        max-width: 650px;
+        max-width: 700px;
         border-radius: 20px;
     }
 
