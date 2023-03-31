@@ -154,15 +154,27 @@ main {
     margin-bottom: 1.5rem;
 }
 
+.continue:hover, .continue:focus {
+    background: linear-gradient(var(--bg--light-slate-blue), var(--bg--light-royal-blue));
+    cursor: pointer;
+}
+
 /************ Desktop Changes *************/
 
 @media only screen and (min-width: 769px) {
     .fs-xxl {
         font-size: 3.5rem;
     }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
     main {
         display: flex;
-        margin: 5rem auto;
+        margin: auto;
         min-height: 0;
         max-width: 650px;
         border-radius: 20px;
