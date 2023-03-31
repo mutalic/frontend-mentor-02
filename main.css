@@ -8,8 +8,6 @@
     --transparent--green-teal: hsl(167, 90%, 96%);
     --transparent--cobalt-blue: hsl(235, 79%, 94%);
 
-
-
     --bg--light-slate-blue: hsl(252, 100%, 67%);
     --bg--light-royal-blue: hsl(241, 81%, 54%);
     --circle--violet-blue: hsla(256, 72%, 46%, 1);
@@ -158,5 +156,41 @@ main {
 
 /************ Desktop Changes *************/
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 769px) {
+    .fs-xxl {
+        font-size: 3.5rem;
+    }
+    main {
+        display: flex;
+        margin: 5rem auto;
+        min-height: 0;
+        max-width: 650px;
+        border-radius: 20px;
+    }
+
+    .result {
+        transform: translateY(0);
+        width: 50%;
+        min-height: 100%;
+    }
+
+    .score-circle {
+        width: 10rem;
+        height: 10rem;
+        margin: 0 auto 2rem;
+    }
+
+    .assessment--comment {
+        margin-bottom: 1rem;
+    }
+
+    .summary {
+        width: 50%;
+        height: 100%;
+        padding: 2.5rem 3rem;
+    }
+
+    .continue {
+        margin-bottom: 0;
+    }
 }
