@@ -16,8 +16,8 @@
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/results-summary-component-dynamic-data-binding-media-queries-jNKuRiFzIZ)
+- Live Site URL: [Add live site URL here](https://642751d748486a2b3b7a107b--guileless-trifle-920455.netlify.app/)
 
 ## My process
 
