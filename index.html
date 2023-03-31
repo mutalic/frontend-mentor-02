@@ -23,7 +23,7 @@
           <p class="score--denominator fs-m">of 100</p>
         </div>
         <div class="assessment">
-          <h3 class="assessment--comment fs-xl">Great</h3>
+          <h2 class="assessment--comment fs-xl">Great</h2>
           <p class="assessment--comparison fs-sm">You scored higher than 65% of the people who have
             taken
             these tests.</p>
@@ -38,7 +38,7 @@
         <div id="aspects" class="summary--aspects"></div>
 
         <button class="continue">
-          <p>Continue</p>
+          Continue
         </button>
       </div>
     </section>
@@ -61,7 +61,7 @@
             let aspectHTML = `
               <div id=${colors[i].id} class="summary--aspect" style="background-color: var(${colors[i].bg})">
                 <div class="aspect--name">
-                  <img src=${aspect.icon} class="aspect--icon"><p class="fs-sm" style="color:var(${colors[i].color})">${aspect.category}</p>
+                  <img src=${aspect.icon} alt="aspect icon" class="aspect--icon"><p class="fs-sm" style="color:var(${colors[i].color})">${aspect.category}</p>
                 </div>
                 <div class="aspect--score">
                   <p class="fs-sm" style="color: var(--bg--dark-gray-blue)">${aspect.score} <span style="color: gray">/ 100</span></p>
